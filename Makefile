@@ -3,22 +3,19 @@ MAKEFLAGS += -s
 NAME = interceptor.so
 
 SRCS = src/interceptor.c
-
 OBJS = $(SRCS:.c=.o)
 
-BONUS_OBJS = $(BONUS_SRCS:.c=.o)
-
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fPIC
 RM = rm -f
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	$(CC) -shared -o $(NAME) $(OBJS) -ldl
 
 clean:
-	$(RM) $(OBJS) $(BONUS_OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
