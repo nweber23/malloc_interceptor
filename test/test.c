@@ -6,10 +6,11 @@ int main(void) {
         void *p = malloc(10);
         if (!p) {
             printf("malloc #%d failed!\n", i);
-            return 1;
         }
-        printf("malloc #%d succeeded\n", i);
-        free(p);
+		else {
+			printf("malloc #%d succeeded\n", i);
+			free(p);
+		}
     }
     return 0;
 }
