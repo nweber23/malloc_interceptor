@@ -1,3 +1,5 @@
+MAKEFLAGS += -s
+
 NAME = interceptor.so
 
 SRCS = src/interceptor.c
