@@ -1,0 +1,5 @@
+interceptor.so
+.vscode
+*.o
+*.swp
+*.out
